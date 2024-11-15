@@ -1,0 +1,39 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: my_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: my_app
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
+    networks:
+      - my_network
+
+  app:
+    image: kalandgraf/webserver:1.0
+    container_name: my_webserver
+    volumes:
+      - ./.docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./.docker/php-config.ini:/etc/php/8.3/apache2/conf.d/php-config.ini
+      - ./:/var/www/html
+    ports:
+      - "80:80"
+    environment:
+      - DB_HOST=db
+      - DB_DATABASE=my_app
+      - DB_USER=user
+      - DB_PASSWORD=password
+    depends_on:
+      - db
+    tty: true
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
