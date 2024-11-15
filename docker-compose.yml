@@ -15,7 +15,7 @@ services:
       - my_network
 
   app:
-    image: kalandgraf/webserver:1.0
+    image: eicaio/webserver:1.0
     container_name: my_webserver
     volumes:
       - ./.docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
