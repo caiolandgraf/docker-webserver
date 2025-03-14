@@ -8,18 +8,18 @@ RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository ppa:ondrej/php && \
     apt-get update && \
-    apt-get install -y php8.3 && \
+    apt-get install -y php8.4 && \
     apt-get install -y php-xdebug && \
-    apt-get install -y php8.3-mysql && \
-    apt-get install -y php8.3-sqlite && \
-    apt-get install -y php8.3-bcmath && \
-    apt-get install -y php8.3-bz2 && \
-    apt-get install -y php8.3-intl && \
-    apt-get install -y php8.3-gd && \
-    apt-get install -y php8.3-mbstring && \
-    apt-get install -y php8.3-zip && \
-    apt-get install -y php8.3-xml && \
-    apt-get install -y php8.3-curl && \
+    apt-get install -y php8.4-mysql && \
+    apt-get install -y php8.4-sqlite && \
+    apt-get install -y php8.4-bcmath && \
+    apt-get install -y php8.4-bz2 && \
+    apt-get install -y php8.4-intl && \
+    apt-get install -y php8.4-gd && \
+    apt-get install -y php8.4-mbstring && \
+    apt-get install -y php8.4-zip && \
+    apt-get install -y php8.4-xml && \
+    apt-get install -y php8.4-curl && \
     apt-get install -y git && \
     a2enmod rewrite && \
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \

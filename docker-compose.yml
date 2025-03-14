@@ -19,7 +19,7 @@ services:
     container_name: my_webserver
     volumes:
       - ./.docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
-      - ./.docker/php-config.ini:/etc/php/8.3/apache2/conf.d/php-config.ini
+      - ./.docker/php-config.ini:/etc/php/8.4/apache2/conf.d/php-config.ini
       - ./:/var/www/html
     ports:
       - "80:80"
